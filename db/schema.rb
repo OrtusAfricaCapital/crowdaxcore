@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_06_222237) do
+ActiveRecord::Schema.define(version: 2021_07_09_233410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,29 @@ ActiveRecord::Schema.define(version: 2021_07_06_222237) do
     t.string "account_type"
     t.string "profile_photo"
     t.boolean "verified"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "ventures", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.string "short_description"
+    t.string "logo"
+    t.string "sector"
+    t.string "investment_stage"
+    t.integer "total_investors"
+    t.decimal "amount_invested"
+    t.date "initial_investing_date"
+    t.date "last_investing_date"
+    t.decimal "minimum_investment_amount"
+    t.string "activation_status"
+    t.string "approval_status"
+    t.date "approved_date"
+    t.string "pitchdeck"
+    t.text "traction"
+    t.string "location"
+    t.string "referred_by"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

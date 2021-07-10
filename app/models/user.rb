@@ -8,7 +8,10 @@ class User < ApplicationRecord
     validates :account_type, presence: true 
     #validates :verified, presence: true 
 
-    
+      #associations
+ # has_one :user_detail
+  has_many :ventures, dependent: :destroy
+
   after_initialize :set_defaults
 
   def set_defaults 

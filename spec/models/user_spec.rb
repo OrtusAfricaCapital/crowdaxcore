@@ -23,10 +23,10 @@ RSpec.describe User, type: :model do
   
  end 
 
-# describe "#Associations " do
+ describe "#Associations " do
 #   it { should have_one :user_detail } 
-#   it { should have_many :ventures }
-# end
+ #   it { should have_many :ventures }
+ end
 
 # describe "#venture associations" do
 
