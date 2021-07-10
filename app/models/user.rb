@@ -9,13 +9,13 @@ class User < ApplicationRecord
     #validates :verified, presence: true 
 
       #associations
- # has_one :user_detail
-  has_many :ventures, dependent: :destroy
+    has_one :user_detail
+    has_many :ventures, dependent: :destroy
 
-  after_initialize :set_defaults
+    after_initialize :set_defaults
 
-  def set_defaults 
-    self.verified ||= "false"
-    self.profile_photo ||= "https://via.placeholder.com/500"
-  end
+    def set_defaults 
+      self.verified ||= "false"
+      self.profile_photo ||= "https://via.placeholder.com/500"
+    end
 end
