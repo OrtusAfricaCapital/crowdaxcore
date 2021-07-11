@@ -11,7 +11,8 @@ Rails.application.routes.draw do
       
       resources :api_keys, only: [:index, :show, :create, :update, :destroy]
       #resources :ventures, only: [:index, :show, :create, :update, :destroy]
-      
+      resources :ventures, only: [:index, :show, :create, :update, :destroy]
+     
       #resources :venture_shares
    #   resources :venture_shares, controller: 'VentureShares', only: [:index, :show, :create, :update, :destroy]
     end
