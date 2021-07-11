@@ -43,7 +43,7 @@ RSpec.describe Venture, type: :model do
       #it { should have_one :venture_share}
       it { should have_one :venture_detail}        
       #it { should have_many :competitors}
-     # it { should have_many :teams}
+      it { should have_many :teams}
 
   end
 end

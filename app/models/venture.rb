@@ -12,7 +12,7 @@ class Venture < ApplicationRecord
     #has_one :venture_share
     #has_many :investments 
     #has_many :competitors
-    #has_many :teams 
+     has_many :teams 
     
     after_initialize :set_defaults
 

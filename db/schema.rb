@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_10_215457) do
+ActiveRecord::Schema.define(version: 2021_07_11_015653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "api_keys", force: :cascade do |t|
     t.string "access_token"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.integer "venture_id"
+    t.string "name"
+    t.string "role"
+    t.string "gender"
+    t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -62,6 +72,17 @@ ActiveRecord::Schema.define(version: 2021_07_10_215457) do
     t.date "founded_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "venture_shares", force: :cascade do |t|
+    t.integer "venture_id"
+    t.integer "unit_share_value"
+    t.integer "total_sold_shares"
+    t.integer "available_shares"
+    t.decimal "valuation_cap"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "overall_shares"
   end
 
   create_table "ventures", force: :cascade do |t|
