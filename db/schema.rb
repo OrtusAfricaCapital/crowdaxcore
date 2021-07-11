@@ -10,13 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_11_015653) do
+ActiveRecord::Schema.define(version: 2021_07_11_022329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "api_keys", force: :cascade do |t|
     t.string "access_token"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "competitors", force: :cascade do |t|
+    t.integer "venture_id"
+    t.string "name"
+    t.text "difference"
+    t.text "advantage"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "social_media", force: :cascade do |t|
+    t.integer "venture_id"
+    t.string "linkedin_handle"
+    t.string "facebook_handle"
+    t.string "twitter_handle"
+    t.string "instagram_handle"
+    t.string "youtube_handle"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

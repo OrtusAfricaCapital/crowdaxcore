@@ -7,11 +7,11 @@ class Venture < ApplicationRecord
     validates :investment_stage, presence: true
 
     #associations
-    belongs_to :user 
-    has_one :venture_detail
-    #has_one :venture_share
+     belongs_to :user 
+     has_one :venture_detail
+     has_one :venture_share
     #has_many :investments 
-    #has_many :competitors
+     has_many :competitors
      has_many :teams 
     
     after_initialize :set_defaults
