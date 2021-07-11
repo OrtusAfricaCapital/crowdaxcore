@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_10_194144) do
+ActiveRecord::Schema.define(version: 2021_07_10_215457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,20 @@ ActiveRecord::Schema.define(version: 2021_07_10_194144) do
     t.string "account_type"
     t.string "profile_photo"
     t.boolean "verified"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "venture_details", force: :cascade do |t|
+    t.integer "venture_id"
+    t.text "full_description"
+    t.text "need"
+    t.text "solution"
+    t.string "milestones", default: [], array: true
+    t.string "how_it_works", default: [], array: true
+    t.string "video_pitches", default: [], array: true
+    t.string "featured_images", default: [], array: true
+    t.date "founded_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

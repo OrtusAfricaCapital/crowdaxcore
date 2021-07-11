@@ -39,9 +39,9 @@ RSpec.describe Venture, type: :model do
   end
   
   context "#Associatons Tests" do
-     # it { should belong_to :user }
+      it { should belong_to :user }
       #it { should have_one :venture_share}
-      #it { should have_one :venture_detail}        
+      it { should have_one :venture_detail}        
       #it { should have_many :competitors}
      # it { should have_many :teams}
 

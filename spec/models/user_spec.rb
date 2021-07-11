@@ -9,6 +9,12 @@ RSpec.describe User, type: :model do
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
 
+  it { should respond_to(:firstname) }
+  it { should respond_to(:lastname) }
+  it { should respond_to(:account_type) }
+  it { should respond_to(:profile_photo) }
+  it { should respond_to(:verified) }
+
   it { should be_valid }
 
 
@@ -24,8 +30,8 @@ RSpec.describe User, type: :model do
  end 
 
  describe "#Associations " do
-#   it { should have_one :user_detail } 
- #   it { should have_many :ventures }
+   it { should have_one :user_detail } 
+   it { should have_many :ventures }
  end
 
 # describe "#venture associations" do

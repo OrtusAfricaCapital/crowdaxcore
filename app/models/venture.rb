@@ -8,7 +8,7 @@ class Venture < ApplicationRecord
 
     #associations
     belongs_to :user 
-    #has_one :venture_detail
+    has_one :venture_detail
     #has_one :venture_share
     #has_many :investments 
     #has_many :competitors
