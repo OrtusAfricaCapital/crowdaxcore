@@ -1,5 +1,5 @@
 class Api::V1::VenturesController < ApplicationController
-    
+  before_action :restrict_access
   #retrieves one venture 
   def show
     venture = Venture.find(params[:id])
@@ -9,7 +9,7 @@ class Api::V1::VenturesController < ApplicationController
   #show all ventures
 
   def index 
-    ventures = Venture.order('created_at DESC').where(approval_status: "true")
+    ventures = Venture.order('created_at DESC')#.where(approval_status: "false")
     render json:{ventures: ventures}
   end
 
@@ -44,7 +44,7 @@ class Api::V1::VenturesController < ApplicationController
   private
 
   def venture_params
-    params.permit(:user_id, :name, :short_description, :logo, :sector, :investment_stage, :total_investors, :amount_invested, :initial_investment_amount, :approval_status, :traction, :location, :referred_by, :pitchdeck)
+    params.permit(:user_id, :name, :short_description, :logo, :sector, :investment_stage, :traction, :location, :referred_by, :pitchdeck)
     # params.permit(:user_id, :name, :short_description,  :sector, :investment_stage)
   end
 end

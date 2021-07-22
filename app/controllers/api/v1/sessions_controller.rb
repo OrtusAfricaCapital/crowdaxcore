@@ -38,12 +38,6 @@ module Api
        render json: {status: 200, logged_out: true}
      end
 
-  private ####### private method
-    def restrict_access #provides secure header token 
-      authenticate_or_request_with_http_token do |token, options|
-        ApiKey.exists?(access_token: token)
-      end
-    end #ends restrict_access
      
    end #ends class
   end #ends module 1

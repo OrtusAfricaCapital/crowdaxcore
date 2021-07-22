@@ -2,7 +2,10 @@
 module Api
   module V1
     class RegistrationsController < ApplicationController
+      
+      #token to protect api inherited from applicationcontroler
       before_action :restrict_access
+      
       def create
         user = User.create!(
           firstname: params['user']['firstname'],
@@ -26,13 +29,7 @@ module Api
         
       end #ends create method 
 
-      
-    private ####### private method
-      def restrict_access #provides secure header token 
-        authenticate_or_request_with_http_token do |token, options|
-          ApiKey.exists?(access_token: token)
-        end
-      end #ends restrict_access
+    
 
     end #ends class 
   end #ends V1 module
