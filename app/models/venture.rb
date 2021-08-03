@@ -4,7 +4,7 @@ class Venture < ApplicationRecord
     validates :name, presence: true, uniqueness: true
     validates :short_description, presence: true
     validates :sector, presence: true
-    validates :investment_stage, presence: true
+   # validates :investment_stage, presence: true
 
     #associations
      belongs_to :user 
@@ -17,10 +17,15 @@ class Venture < ApplicationRecord
     after_initialize :set_defaults
 
     def set_defaults
-        self.approval_status ||= "false"
-        self.total_investors ||= 0
-        self.amount_invested ||= 0
-        self.logo ||= "https://picsum.photos/680/260?grayscale"
+        self.initial_investing_date ||= Time.now if new_record?
+        self.last_investing_date ||= Time.now if new_record?
+        self.investment_stage ||= "Pre-Seed Stage" if new_record?
+        self.approval_status ||= "false" if new_record?
+        self.total_investors ||= 0  if new_record?
+        self.amount_invested ||= 0 if new_record?
+        self.logo ||= "https://via.placeholder.com/500x500" if new_record?
+        self.feature_image ||= "https://via.placeholder.com/640x360" if new_record?
+        self.investment_amount_targetted ||= 1000 if new_record?
     end
 
 end

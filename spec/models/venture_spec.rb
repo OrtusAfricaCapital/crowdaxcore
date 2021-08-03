@@ -28,13 +28,15 @@ RSpec.describe Venture, type: :model do
       it { should respond_to(:referred_by) }
       
       it { should respond_to(:pitchdeck) }
+      it { should respond_to(:feature_image) }
+      it { should respond_to(:investment_amount_targetted) }
 
       it { should validate_presence_of :user_id }        
       it { should validate_presence_of :name }
       it { should validate_uniqueness_of(:name) }
       it { should validate_presence_of :short_description }        
       it { should validate_presence_of :sector }
-      it { should validate_presence_of :investment_stage }        
+     # it { should validate_presence_of :investment_stage }        
       
   end
   

@@ -18,7 +18,7 @@ class Api::V1::VenturesController < ApplicationController
      venture = Venture.new(venture_params)
 
      if venture.save 
-        render json: {data: venture}, status: :created
+        render json: {venture: venture}, status: :created
      else
         render json: {status: 'Error', message: 'Venture not saved', data: venture.errors}, status: :unprocessable_entity
      end
@@ -33,7 +33,7 @@ class Api::V1::VenturesController < ApplicationController
   def update
     venture = Venture.find(params[:id])
     if venture.update(venture_params)
-      render json: {data: venture}
+      render json: {venture: venture}
     else
       render json: {status: 'Error', message: 'Venture not updated', data: venture.errors}, status: :unprocessable_entity
     end

@@ -18,5 +18,7 @@ FactoryBot.define do
       location {Faker::Address.city}
       referred_by {Faker::Company.name}
       pitchdeck {Faker::Internet.url}
+      investment_amount_targetted {Faker::Internet.url}
+      feature_image {Faker::Company.logo}
   end
 end
