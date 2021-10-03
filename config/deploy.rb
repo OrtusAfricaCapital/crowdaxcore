@@ -5,7 +5,7 @@ set :application, "crowdaxcore"
 set :repo_url, "git@github.com:OrtusAfricaCapital/crowdaxcore.git"
 
 # Deploy to the user's home directory
-set :deploy_to, "/home/crowdax/backend/#{fetch :application}"
+set :deploy_to, "/home/crowdax/backend/"
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
