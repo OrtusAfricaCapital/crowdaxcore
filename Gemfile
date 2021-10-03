@@ -58,6 +58,5 @@ gem 'rack-cors', :require => 'rack/cors'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-#gem 'rack-cors', :require => 'rack/cors'
 gem 'ed25519', '>= 1.2', '< 2.0'
 #gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
