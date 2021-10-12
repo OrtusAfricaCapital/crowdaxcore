@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.16.0"
 
-set :application, "backend"
+set :application, "crowdaxcore"
 set :repo_url, "git@github.com:OrtusAfricaCapital/crowdaxcore.git"
 
 # Deploy to the user's home directory
