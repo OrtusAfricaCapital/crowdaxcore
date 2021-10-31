@@ -13,7 +13,7 @@ class Api::V1::ApiKeysController < ApplicationController
      if apiKey.save 
         render json: {data: apiKey}, status: :created
      else
-        render json: {status: 'Error', message: 'ApiKey not saved', data: apiKey.errors}, status: :unprocessable_entity
+        render json: {status: 'Error', message: 'ApiKey saved not', data: apiKey.errors}, status: :unprocessable_entity
      end
     end
 end
