@@ -46,7 +46,16 @@ module Api
       private
 
       def venture_params
-        params.permit(:user_id, :name, :short_description, :logo, :sector, :investment_stage, :traction, :location, :referred_by, :pitchdeck)
+        params.permit(:user_id, 
+         :name, 
+         :short_description,
+         :logo, 
+         :sector, 
+         :investment_stage, 
+         :traction, 
+         :location, 
+         :referred_by, 
+         :pitchdeck)
         # params.permit(:user_id, :name, :short_description,  :sector, :investment_stage)
       end
     end
