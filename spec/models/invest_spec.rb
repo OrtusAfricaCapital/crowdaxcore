@@ -7,7 +7,7 @@ RSpec.describe Invest, type: :model do
 
   context "#Responsive Test" do 
     it { should respond_to(:user_id) }
-    it { should respond_to(:business_id) }
+    it { should respond_to(:venture_id) }
     it { should respond_to(:type_of_investment) }
     it { should respond_to(:shares_purchased) }
     it { should respond_to(:amount_invested)}
@@ -17,8 +17,14 @@ RSpec.describe Invest, type: :model do
 
  context "#Validation Tests" do
   it { should validate_presence_of :user_id }        
-  it { should validate_presence_of :business_id }
+  it { should validate_presence_of :venture_id }
   it { should validate_presence_of :amount_invested }        
  end
+
+
+ context "#Associatons Tests" do
+  it { should belong_to :user }
+  it { should belong_to :venture }
+end
 
 end

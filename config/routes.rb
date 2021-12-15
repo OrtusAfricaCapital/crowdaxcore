@@ -10,8 +10,10 @@ Rails.application.routes.draw do
       get :logged_in, to: "sessions#logged_in"
       
       resources :api_keys, only: [:index, :show, :create, :update, :destroy]
+
       resources :ventures, only: [:index, :show, :create, :update, :destroy]
-      resources :invests, only: [:create, :update, :destroy]
+      
+      resources :invests, only: [:index, :create]
     end
   end
 end

@@ -32,6 +32,7 @@ RSpec.describe User, type: :model do
  describe "#Associations " do
    it { should have_one :user_detail } 
    it { should have_many :ventures }
+   it { should have_many :invests }
  end
 
 # describe "#venture associations" do

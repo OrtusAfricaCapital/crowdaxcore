@@ -11,7 +11,8 @@ class User < ApplicationRecord
       #associations
     has_one :user_detail
     has_many :ventures, dependent: :destroy
-
+    has_many :invests 
+    
     after_initialize :set_defaults
 
     def set_defaults 
