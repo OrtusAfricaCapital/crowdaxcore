@@ -4,7 +4,7 @@ module Api
       before_action :restrict_access
       #retrieves one venture 
       def show
-        venture = Venture.find(params[:id])
+        venture = Venture.find_by_user_id(params[:id])
         render json:{venture: venture}
       end
 
