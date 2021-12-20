@@ -1,8 +1,8 @@
 module Api
     module V1
         class InvestsController < ApplicationController
-            
-
+        before_action :restrict_access
+        
         def index 
             invests = Invest.order('created_at DESC')#.where(approval_status: "false")
             render json:{invests: invests}

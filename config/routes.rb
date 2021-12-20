@@ -8,12 +8,21 @@ Rails.application.routes.draw do
       resources :registrations, only: [:create]
       delete :logout, to: "sessions#logout"
       get :logged_in, to: "sessions#logged_in"
-      
-      resources :api_keys, only: [:index, :show, :create, :update, :destroy]
-
+      resources :api_keys, only: [ :update, :destroy]
       resources :ventures, only: [:index, :show, :create, :update, :destroy]
-      
       resources :invests, only: [:index, :create]
+      resources :competitors, only: [:index, :show, :create, :update, :destroy]
+      
+      resources :venture_shares, only: [:index, :show, :create, :update, :destroy]
+      
+      resources :user_details, only: [:index, :show, :create, :update, :destroy]
+      resources :teams, only: [:index, :show, :create, :update, :destroy]
+      resources :social_medias, only: [:index, :show, :create, :update, :destroy]
+
+      
+      resources :categories, only: [:index, :show, :create, :update, :destroy]
+      
+      
     end
   end
 end

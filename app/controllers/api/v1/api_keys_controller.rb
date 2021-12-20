@@ -1,9 +1,9 @@
 class Api::V1::ApiKeysController < ApplicationController
    
-   def index 
-      apiKeys = ApiKey.order('created_at DESC')
-      render json:{apiKeys: apiKeys}
-   end
+   # def index 
+   #    apiKeys = ApiKey.order('created_at DESC')
+   #    render json:{apiKeys: apiKeys}
+   # end
     
    
    def create
@@ -16,11 +16,11 @@ class Api::V1::ApiKeysController < ApplicationController
       end
    end
 
-   def destroy 
-      apikey = ApiKey.find(params[:id])
-      apikey.destroy
-      render json: {status: "SUCCESS", message: "key deleted", data: apikey}, status: :ok
+   # def destroy 
+   #    apikey = ApiKey.find(params[:id])
+   #    apikey.destroy
+   #    render json: {status: "SUCCESS", message: "key deleted", data: apikey}, status: :ok
     
-   end
+   # end
 
 end
