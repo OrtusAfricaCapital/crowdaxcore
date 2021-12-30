@@ -20,5 +20,9 @@ FactoryBot.define do
       pitchdeck {Faker::Internet.url}
       investment_amount_targetted {Faker::Internet.url}
       feature_image {Faker::Company.logo}
+      amount_pledged {100.20} 
+      total_competitors {20}
+      invests_count {20}
+
   end
 end

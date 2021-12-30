@@ -31,6 +31,10 @@ RSpec.describe Venture, type: :model do
       it { should respond_to(:feature_image) }
       it { should respond_to(:investment_amount_targetted) }
 
+      it { should respond_to(:invests_count) }
+      it { should respond_to(:total_competitors) }
+      it { should respond_to(:amount_pledged) }
+
       it { should validate_presence_of :user_id }        
       it { should validate_presence_of :name }
       it { should validate_uniqueness_of(:name) }
