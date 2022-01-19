@@ -8,7 +8,7 @@ set :repo_url, "git@github.com:OrtusAfricaCapital/crowdaxcore.git"
 set :deploy_to, "/home/crowdax/#{fetch :application}"
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml config/secrets.yml}
+#set :linked_files, %w{config/database.yml config/secrets.yml}
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
