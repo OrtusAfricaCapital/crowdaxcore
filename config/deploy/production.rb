@@ -60,3 +60,4 @@ server '161.35.139.74', user: 'crowdax', roles: %w{app db web}
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+

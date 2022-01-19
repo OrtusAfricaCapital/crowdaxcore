@@ -14,6 +14,6 @@ test:
 #
 production:
   <<: *default
-  #database: crowdax_db
-  # username: deploy
-  #password: <%= ENV['CROWDAX_DATABASE_PASSWOwRD'] %>
+  database: crowdax_db
+  username: crowdax
+  password: <%= ENV['CROWDAX_DATABASE_PASSWOwRD'] %>

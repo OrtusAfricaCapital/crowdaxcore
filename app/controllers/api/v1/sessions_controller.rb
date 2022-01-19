@@ -1,11 +1,11 @@
 module Api
   module V1
     class SessionsController < ApplicationController      
+      
       include CurrentUserConcern      
       before_action :restrict_access
 
        def create
-   
            user = User
                .find_by(email: params["user"]["email"])
                .try(:authenticate, params["user"]["password"])
