@@ -1,11 +1,11 @@
 lock "~> 3.16.0"
 
-require 'capistrano-db-tasks'
+#require 'capistrano-db-tasks'
 
 set :application, "crowdaxcore"
 set :repo_url, "git@github.com:OrtusAfricaCapital/crowdaxcore.git"
 
-set :deploy_to, '/home/deploy/crowdaxcore'
+set :deploy_to, '/home/crowdax/crowdaxcore'
 set :branch, ENV['BRANCH'] if ENV['BRANCH']
 
 set :linked_files, %w{config/database.yml config/master.key}
