@@ -14,6 +14,8 @@ test:
 #
 production:
   <<: *default
-  #database: crowdax_db
-  #username: crowdax
-  #password: <%= ENV['CROWDAX_DATABASE_PASSWOwRD'] %>
+  database: crowdax_db
+  username: crowdax
+  password: Rails.application.credentials.dig(:production, :db_password)
+  host: ortus-db-do-user-9816964-0.b.db.ondigitalocean.com
+  port: 25060
