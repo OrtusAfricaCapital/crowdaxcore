@@ -1,10 +1,12 @@
-require 'capistrano/setup'
-require 'capistrano/deploy'
-require 'capistrano/bundler'
+require "capistrano/setup"
+require "capistrano/deploy"
 require 'capistrano/rails'
+require 'capistrano/passenger'
 require 'capistrano/rbenv'
+
 set :rbenv_type, :user
 set :rbenv_ruby, '3.0.3'
+
 
 
 require "capistrano/scm/git"

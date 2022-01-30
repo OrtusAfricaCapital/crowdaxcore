@@ -16,4 +16,4 @@ production:
   <<: *default
   database: crowdax_db
   username: crowdax
-  password: Rails.application.credentials.dig(:production, :db_password)
+#  password: Rails.application.credentials.dig(:production, :db_password)

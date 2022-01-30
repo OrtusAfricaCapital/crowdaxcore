@@ -1,30 +1,11 @@
 lock "~> 3.16.0"
 
-require 'capistrano-db-tasks'
-
 set :application, "crowdaxcore"
 set :repo_url, "git@github.com:OrtusAfricaCapital/crowdaxcore.git"
 
-set :deploy_to, '/home/crowdax/crowdaxcore'
-set :branch, ENV['BRANCH'] if ENV['BRANCH']
+set :deploy_to, "/home/crowdax/#{fetch :application}"
 
-set :linked_files, %w{config/database.yml config/master.key}
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
+# Only keep the last 5 releases to save disk space
 set :keep_releases, 3
-set :keep_assets, 3
-
-set :db_local_clean, true
-set :db_remote_clean, true
-
-namespace :deploy do
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      execute :touch, release_path.join('tmp/restart.txt')
-    end
-  end
-
-  after :publishing, 'deploy:restart'
-  after :finishing, 'deploy:cleanup'
-end
