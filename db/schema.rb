@@ -10,23 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_21_115108) do
-
+ActiveRecord::Schema[7.0].define(version: 2021_12_21_115108) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "api_keys", force: :cascade do |t|
     t.string "access_token"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.text "market_cap"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "competitors", force: :cascade do |t|
@@ -34,8 +33,8 @@ ActiveRecord::Schema.define(version: 2021_12_21_115108) do
     t.string "name"
     t.text "difference"
     t.text "advantage"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "invests", force: :cascade do |t|
@@ -44,8 +43,8 @@ ActiveRecord::Schema.define(version: 2021_12_21_115108) do
     t.float "shares_purchased"
     t.float "amount_invested"
     t.string "investing_as"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "venture_id"
   end
 
@@ -56,8 +55,8 @@ ActiveRecord::Schema.define(version: 2021_12_21_115108) do
     t.string "twitter_handle"
     t.string "instagram_handle"
     t.string "youtube_handle"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "teams", force: :cascade do |t|
@@ -66,8 +65,8 @@ ActiveRecord::Schema.define(version: 2021_12_21_115108) do
     t.string "role"
     t.string "gender"
     t.text "bio"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_details", force: :cascade do |t|
@@ -83,8 +82,8 @@ ActiveRecord::Schema.define(version: 2021_12_21_115108) do
     t.decimal "total_amount_invested"
     t.integer "companies_invested_in"
     t.decimal "investment_annual_limit"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -95,8 +94,8 @@ ActiveRecord::Schema.define(version: 2021_12_21_115108) do
     t.string "account_type"
     t.string "profile_photo"
     t.boolean "verified"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "venture_details", force: :cascade do |t|
@@ -109,8 +108,8 @@ ActiveRecord::Schema.define(version: 2021_12_21_115108) do
     t.string "video_pitches", default: [], array: true
     t.string "featured_images", default: [], array: true
     t.date "founded_date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "venture_shares", force: :cascade do |t|
@@ -119,8 +118,8 @@ ActiveRecord::Schema.define(version: 2021_12_21_115108) do
     t.integer "total_sold_shares"
     t.integer "available_shares"
     t.decimal "valuation_cap"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "overall_shares"
   end
 
@@ -143,8 +142,8 @@ ActiveRecord::Schema.define(version: 2021_12_21_115108) do
     t.text "traction"
     t.string "location"
     t.string "referred_by"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.decimal "investment_amount_targetted"
     t.string "feature_image"
     t.decimal "amount_pledged"
