@@ -1,6 +1,6 @@
 ## Crowdax API by Ortus Africa Capital. Kampala. Uganda.
 
-### Invest or raise your capital with crowdax
+### Invest or raise capital for your business with crowdax
 
 _Support by Jjingo Kisakye_
 
