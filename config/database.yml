@@ -14,7 +14,8 @@ test:
 #
 production:
   <<: *default
-  database: crowdax_db
-  username: deploy
-  password: <%= ENV['CROWDAX_DATABASE_PASSWOwRD'] %>
+  #database: crowdax_db
+  #username: deploy
+  #password: <%= ENV['CROWDAX_DATABASE_PASSWOwRD'] %>
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
 #  password: Rails.application.credentials.dig(:production, :db_password)
