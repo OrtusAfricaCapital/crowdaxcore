@@ -6,15 +6,15 @@ class Api::V1::ApiKeysController < ApplicationController
     end
     
    
-   def create
-      apiKey = ApiKey.new()
+   # def create
+   #    apiKey = ApiKey.new()
 
-      if apiKey.save 
-          render json: {data: apiKey}, status: :created
-      else
-         render json: {status: 'Error', message: 'ApiKey saved not', data: apiKey.errors}, status: :unprocessable_entity
-      end
-   end
+   #    if apiKey.save 
+   #        render json: {data: apiKey}, status: :created
+   #    else
+   #       render json: {status: 'Error', message: 'ApiKey saved not', data: apiKey.errors}, status: :unprocessable_entity
+   #    end
+   # end
 
    # def destroy 
    #    apikey = ApiKey.find(params[:id])
