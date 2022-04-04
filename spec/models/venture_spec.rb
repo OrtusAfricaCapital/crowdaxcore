@@ -13,7 +13,7 @@ RSpec.describe Venture, type: :model do
       it { should respond_to(:name) }
       it { should respond_to(:short_description) }
       it { should respond_to(:logo) }
-      it { should respond_to(:sector) }
+      it { should respond_to(:sector)  }
       it { should respond_to(:investment_stage) }
       it { should respond_to(:total_investors) }
       it { should respond_to(:amount_invested) }

@@ -41,8 +41,6 @@ module Api
         end
       end
 
-
-
       private
 
       def venture_params
@@ -55,7 +53,9 @@ module Api
          :traction, 
          :location, 
          :referred_by, 
-         :pitchdeck)
+         :pitchdeck,
+         :feature_image,
+         :investment_amount_targetted)
         # params.permit(:user_id, :name, :short_description,  :sector, :investment_stage)
       end
     end
