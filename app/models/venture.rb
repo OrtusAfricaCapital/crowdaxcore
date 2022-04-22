@@ -25,7 +25,9 @@ class Venture < ApplicationRecord
         self.total_investors ||= 0  if new_record?
         self.amount_invested ||= 0  if new_record?
         self.invests_count ||= 0 if new_record?
-        self.investment_amount_targetted ||= rand(1000..5000) if new_record?
+        self.logo ||= "https://picsum.photos/200/200" if new_record?
+        self.feature_image ||= "https://via.placeholder.com/640x360" if new_record?
+        self.investment_amount_targetted ||= rand(1000..10000) if new_record?
     end
 
 end
