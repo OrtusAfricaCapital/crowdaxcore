@@ -11,7 +11,7 @@ module Api
       #show all ventures
 
       def index 
-        ventures = Venture.order('created_at DESC')#.where(approval_status: "false")
+        ventures = Venture.order('created_at DESC').where(approval_status: "true")
         render json:{ventures: ventures}
       end
 
@@ -26,12 +26,7 @@ module Api
         end
       end
 
-      def destroy
-        venture = Venture.find(params[:id])
-        venture.destroy
-        render json: {status: 'SUCCESS', message: 'Deleted venture', data: venture}, status: :ok
-      end
-
+      
       def update
         venture = Venture.find(params[:id])
         if venture.update(venture_params)
