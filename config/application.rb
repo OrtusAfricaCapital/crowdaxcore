@@ -34,5 +34,16 @@ module Crowdaxcore
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # ActionMailer::Base.smtp_settings = {
+    #   :address  => 'smtp.gmail.com',
+    #   :domain   =>  'mail.google.com',
+    #   :port     =>  587,
+    #   :user_name => 'tech@ortusafrica.com',
+    #   :password => 'Autosum22',
+    #   :authentication => 'login',
+    #   :enable_starttls_auto => true
+    # }
+
   end
 end

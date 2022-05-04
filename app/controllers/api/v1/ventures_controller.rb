@@ -18,8 +18,9 @@ module Api
       #creates a new venture 
       def create
         venture = Venture.new(venture_params)
-
         if venture.save 
+  
+            VentureMailer.venture_created(venture.name, venture.short_description, venture.sector, venture.traction, venture.investment_stage, venture.referred_by, venture.approval_status).deliver
             render json: {venture: venture}, status: :created
         else
             render json: {status: 'Error', message: 'Venture not saved', data: venture.errors}, status: :unprocessable_entity
