@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       resources :api_keys, only: [:index, :show, :create, :update, :destroy]
       resources :ventures, only: [:index, :show, :create, :update]
       
-      resources :invests, only: [:index, :show, :create, :update, :destroy]
+      resources :invests, only: [:index, :show, :create, :destroy]
       
       resources :competitors, only: [:index, :show, :create, :update, :destroy]
       
