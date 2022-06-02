@@ -4,7 +4,7 @@ class InvestMailer < ApplicationMailer
         
         mail(to: "tech@ortusafrica.com",
             from: "tech@ortusafrica.com",
-            cc: ["venture@ortusafrica.com", "klegesi@ortusafrica.com"],
+            #cc: ["venture@ortusafrica.com", "klegesi@ortusafrica.com"],
             subject:  "Investment of $" + amount_invested + " invested in " + venuture_name, 
 
             body:  "Details of investment: - \n\n"+ 

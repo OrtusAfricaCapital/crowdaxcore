@@ -32,8 +32,9 @@ module Api
                 
                 if invest.save 
 
-                    InvestMailer.invest_created(investor_name , investor.email, venture.name, invest.type_of_investment, invest.shares_purchased.to_s, (invest.amount_invested).to_s).deliver
-                    render json: {invest: invest}, status: :created
+                     render json: {invest: invest}, status: :created.to_s
+                     InvestMailer.invest_created(investor_name , investor.email, venture.name, invest.type_of_investment, invest.shares_purchased.to_s, (invest.amount_invested)).deliver
+                
                 else
                     render json: {status: 'Error', message: 'invest not saved', data: invest.errors}, status: :unprocessable_entity
                 end

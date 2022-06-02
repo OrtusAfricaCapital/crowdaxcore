@@ -20,8 +20,9 @@ module Api
         venture = Venture.new(venture_params)
         if venture.save 
   
-            VentureMailer.venture_created(venture.name, venture.short_description, venture.sector, venture.traction, venture.investment_stage, venture.referred_by, venture.approval_status).deliver
             render json: {venture: venture}, status: :created
+            VentureMailer.venture_created(venture.name, venture.short_description, venture.sector, venture.traction, venture.investment_stage, "$ "+venture.investment_amount_targetted.to_s, venture.referred_by, venture.approval_status).deliver
+            
         else
             render json: {status: 'Error', message: 'Venture not saved', data: venture.errors}, status: :unprocessable_entity
         end
